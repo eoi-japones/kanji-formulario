@@ -1,0 +1,4 @@
+.de
+*.swo
+*.swp
+node_modules/
