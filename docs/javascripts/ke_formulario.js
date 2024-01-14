@@ -194,7 +194,7 @@ var KE_Formulario;
 
         APPEND: true,
 
-        url: "../html/mini_modal.html",
+        url: "kanji-formulario/html/mini_modal.html",
 
         backdrop: new Element('div', {
 
@@ -255,7 +255,7 @@ var KE_Formulario;
 
         Extends: KE_Formulario.baseHtml,
 
-        url: "../html/formulario.html",
+        url: "kanji-formulario/html/formulario.html",
 
         initialize: function(){
 
