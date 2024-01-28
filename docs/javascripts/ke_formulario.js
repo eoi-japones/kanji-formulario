@@ -2,9 +2,15 @@
 
 var KE_Formulario;
 
+//const PREFIX = "/kanji-formulario/html";
+const PREFIX = "./html";
+
+
 (function(){
 
     if(KE_Formulario) return;
+
+    let solo_componente = false;
 
     KE_Formulario = {
 
@@ -15,6 +21,8 @@ var KE_Formulario;
         esKanji: function(texto){
 
             return !!texto.match(/^[\u4E00-\u9FAF]+$/) ||
+
+            texto == '｜' || 
 
             texto == '𠂉' || 
 
@@ -194,7 +202,7 @@ var KE_Formulario;
 
         APPEND: true,
 
-        url: "/kanji-formulario/html/mini_modal.html",
+        url: `${PREFIX}/mini_modal.html`,
 
         backdrop: new Element('div', {
 
@@ -255,7 +263,7 @@ var KE_Formulario;
 
         Extends: KE_Formulario.baseHtml,
 
-        url: "/kanji-formulario/html/formulario.html",
+        url: `${PREFIX}/formulario.html`,
 
         initialize: function(){
 
@@ -340,6 +348,13 @@ var KE_Formulario;
             return true;
         },
 
+	getTipoKanji: function(){
+
+	   this.data.solo_componente = (solo_componente) ? 1 : 0
+
+	   return true
+	},
+
         getComoComponente: function(){
 
             var como_componente = [];
@@ -415,6 +430,10 @@ var KE_Formulario;
                 return false;
             }
 
+            if(!this.getTipoKanji()){
+                return false;
+            }
+
             if(!this.getHistoria(this.data.historia)){
                 this.__koInput('historia_form', this.error);
                 return false;
@@ -429,6 +448,7 @@ var KE_Formulario;
                 this.__koInput('como_componente_form', this.error);
                 return false;
             }
+
 
             if(!ok) return false;
 
@@ -459,6 +479,26 @@ var KE_Formulario;
                 else{
                     this.__koInput('clave_form', this.error);
                 }
+            }.bind(this));
+
+            //para solo componente
+            document.id('input_tipo_solo_componente').addEvent('change', function(el){
+
+		if(el.target.value == "on"){
+
+			solo_componente = true
+		}
+
+            }.bind(this));
+
+            document.id('input_tipo_kanji').addEvent('change', function(el){
+
+		if(el.target.value == "on"){
+
+			solo_componente = false
+
+		}
+
             }.bind(this));
 
             //para historia
