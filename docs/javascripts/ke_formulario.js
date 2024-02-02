@@ -46,7 +46,7 @@ const PREFIX = "./html";
 
             texto == '龷' ||
 
-			texto == '𠀎' ||
+	    texto == '𠀎' ||
 
             texto == '𠂆' ||
 
@@ -59,6 +59,8 @@ const PREFIX = "./html";
             texto == 'ユ' ||
 
             texto == '夬' ||
+
+            texto == '𫩠' ||
 
             //control de custom
             texto.match(/^\#(\w+)/) || 
