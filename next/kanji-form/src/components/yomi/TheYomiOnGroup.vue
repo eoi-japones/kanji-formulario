@@ -49,6 +49,7 @@
             <v-text-field
               v-model="form.integrantes[index]"
               label="Integrante"
+              :rules="[rules.required]"
               class="mr-4"
             ></v-text-field>
             <v-btn icon @click="removeIntegrante(index)">
@@ -68,6 +69,7 @@
             <v-text-field
               v-model="form.especiales[index]"
               label="Especial"
+              :rules="[rules.required]"
               class="mr-4"
             ></v-text-field>
             <v-btn icon @click="removeEspecial(index)">
