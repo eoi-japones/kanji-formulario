@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "vite build --base=/kanji-formularios/next",
+    "build": "vite build --base=/kanji-formulario/next",
     "preview": "vite preview"
   },
   "dependencies": {
