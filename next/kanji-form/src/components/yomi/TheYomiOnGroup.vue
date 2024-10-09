@@ -85,16 +85,32 @@
         <v-col>
           <h4>Ejemplos</h4>
           <v-btn @click="addEjemplo">Agregar Ejemplo</v-btn>
-          <v-row v-for="(ejemplo, key) in form.ejemplos" :key="key" class="mt-2">
-            <v-text-field
-              v-model="ejemplo.palabra"
-              label="Palabra"
-              class="mr-4"
-            ></v-text-field>
-            <v-text-field
-              v-model="ejemplo.significado"
-              label="Significado"
-            ></v-text-field>
+          <v-row v-for="(ejemplo, key) in form.ejemplos" :key="key" class="mt-2 d-flex align-center">
+            <v-col>
+              <v-text-field
+                v-model="ejemplo.palabra"
+                label="Palabra"
+                class="mr-4"
+                :rules="[rules.required]"
+              ></v-text-field>
+              <v-text-field
+                v-model="ejemplo.significado"
+                label="Significado"
+                :rules="[rules.required]"
+              ></v-text-field>
+            </v-col>
+            <v-col>
+              <v-text-field
+                v-model="ejemplo.lectura"
+                label="Lectura"
+                :rules="[rules.required, rules.lectura]"
+              ></v-text-field>
+              <v-text-field
+                v-model="ejemplo.mascara"
+                label="Máscara"
+                :rules="[rules.required]"
+              ></v-text-field>
+            </v-col>
             <v-btn icon @click="removeEjemplo(key)">
               <v-icon>mdi-delete</v-icon>
             </v-btn>
