@@ -1,4 +1,4 @@
-import { createMemoryHistory, createRouter } from 'vue-router'
+import { createWebHistory, createRouter } from 'vue-router'
 
 import TheMainPage from "@/components/TheMainPage.vue"
 import TheYomiOnGroup from "@/components/yomi/TheYomiOnGroup.vue"
@@ -7,11 +7,15 @@ const routes = [
 
     {
 
-        path: "",
+        path: "/",
 
-        component: TheMainPage
+        component: TheMainPage,
+
+        name: "Root"
 
     },
+
+    { path: "/index.html", redirect: { name: "Root" }},
 
     {
         path: "/yomi-on",
@@ -23,7 +27,7 @@ const routes = [
 ]
 
 const router = createRouter({
-      history: createMemoryHistory(),
+      history: createWebHistory("/kanji-formulario/next"),
       routes,
 })
 
