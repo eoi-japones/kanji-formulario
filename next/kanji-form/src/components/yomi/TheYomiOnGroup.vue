@@ -168,7 +168,7 @@ const submit = () => {
 
     if(valid.value){
 
-        DataDumper(form.value, "foo")
+        DataDumper(form.value, "foo.yaml")
 
     }
     else{

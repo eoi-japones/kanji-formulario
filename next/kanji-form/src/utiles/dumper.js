@@ -9,9 +9,9 @@ export default function(data, name){
             Yaml.dump(data)
         ], 
 
-        "name", 
+        name, 
 
-        {type: "text/plain;charset=utf-8"}
+        {type: "text/yaml;charset=utf-8"}
 
     );
 
