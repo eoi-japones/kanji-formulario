@@ -186,7 +186,7 @@ const submit = () => {
 
     if(valid.value){
 
-        DataDumper(form.value, "foo.yaml")
+        DataDumper(form.value, `${form.value.id}-yomi-on.yaml`)
 
     }
     else{
