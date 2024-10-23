@@ -23,11 +23,21 @@ const items = ref([
         
     },
 
+    {
+        title: "Hiragana",
+        value: "hiragana"
+    },
+
+    {
+        title: "Katakana",
+        value: "katakana"
+    },
+
 ])
 
 function go(){
 
-   router.push("/yomi-on")
+   router.push(`/${selected.value[0]}`)
 
 }
 
