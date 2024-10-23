@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from 'vue-router'
 
 import TheMainPage from "@/components/TheMainPage.vue"
 import TheYomiOnGroup from "@/components/yomi/TheYomiOnGroup.vue"
+import TheKana from "@/components/kana/TheKana.vue"
 
 const routes = [
 
@@ -21,6 +22,31 @@ const routes = [
         path: "/yomi-on",
 
         component: TheYomiOnGroup
+
+    },
+
+    {
+        path: "/katakana",
+
+        component: TheKana,
+
+        props: {
+
+            esHiragana: false
+
+        }
+    },
+
+    {
+        path: "/hiragana",
+
+        component: TheKana,
+
+        props: {
+
+            esHiragana: true
+
+        }
 
     }
 
