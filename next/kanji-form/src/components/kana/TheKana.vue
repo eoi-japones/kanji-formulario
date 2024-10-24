@@ -20,7 +20,7 @@
       <!-- Campo 'historia' -->
       <v-textarea
         v-model="form.historia"
-        label="label('Historia representativa de los componentes del kana')"
+        :label="label('Historia representativa de los componentes del kana')"
         :rules="[rules.required]"
         required
       ></v-textarea>
